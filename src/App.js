@@ -3,6 +3,7 @@ import "./App.css";
 
 // local imports
 import CardList from "./components/card-list/CardList";
+import SearchBox from "./components/search-box/SearchBox";
 
 class App extends Component {
   constructor() {
@@ -44,11 +45,10 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <input
-          type="search"
-          className="search-box"
-          placeholder="search monsters"
-          onChange={this.handleChange}
+        <SearchBox
+          handleChange={this.handleChange}
+          placeHolder={"Search Monster"}
+          className={"search-box"}
         />
         <CardList monsters={filteredMonsters} />
       </div>
