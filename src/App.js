@@ -45,10 +45,11 @@ class App extends Component {
     );
     return (
       <div className="App">
+        <h1 className="app-title">Monster Card</h1>
         <SearchBox
           handleChange={this.handleChange}
           placeHolder={"Search Monster"}
-          className={"search-box"}
+          className={"monsters-search-box"}
         />
         <CardList monsters={filteredMonsters} />
       </div>

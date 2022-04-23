@@ -1,0 +1,24 @@
+.card-list {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 20px;
+}
+
+@media (max-width: 447px) {
+  .card-list {
+    transform: translateX(15%);
+  }
+}
+
+@media (max-width: 376px) {
+  .card-list {
+    transform: translateX(12%);
+  }
+}
+@media (max-width: 281px) {
+  .card-list {
+    transform: translateX(1%);
+  }
+}
