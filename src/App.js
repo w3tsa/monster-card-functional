@@ -6,12 +6,20 @@ class App extends Component {
     super();
     this.state = {
       monsters: [],
+      searchField: "",
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleClick() {}
+  handleChange(e) {
+    const searchField = e.target.value;
+    this.setState(() => {
+      return { searchField };
+    });
+  }
 
   async componentDidMount() {
     try {
@@ -26,10 +34,21 @@ class App extends Component {
   }
 
   render() {
+    const { monsters, searchField } = this.state;
+    const regexp = new RegExp(searchField, "gi");
+    const filteredMonsters = monsters.filter((monster) =>
+      monster.name.match(regexp)
+    );
     return (
       <div className="App">
+        <input
+          type="search"
+          className="search-box"
+          placeholder="search monsters"
+          onChange={this.handleChange}
+        />
         <h1>
-          {this.state.monsters.map((monster) => {
+          {filteredMonsters.map((monster) => {
             return <p key={monster.id}>{monster.name}</p>;
           })}
         </h1>
