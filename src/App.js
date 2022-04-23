@@ -2,7 +2,7 @@ import { Component } from "react";
 import "./App.css";
 
 // local imports
-import Card from "./components/card/Card";
+import CardList from "./components/card-list/CardList";
 
 class App extends Component {
   constructor() {
@@ -44,18 +44,13 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <Card />
         <input
           type="search"
           className="search-box"
           placeholder="search monsters"
           onChange={this.handleChange}
         />
-        <h1>
-          {filteredMonsters.map((monster) => {
-            return <p key={monster.id}>{monster.name}</p>;
-          })}
-        </h1>
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
