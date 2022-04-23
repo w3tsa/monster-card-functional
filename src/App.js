@@ -1,6 +1,9 @@
 import { Component } from "react";
 import "./App.css";
 
+// local imports
+import Card from "./components/card/Card";
+
 class App extends Component {
   constructor() {
     super();
@@ -41,6 +44,7 @@ class App extends Component {
     );
     return (
       <div className="App">
+        <Card />
         <input
           type="search"
           className="search-box"
