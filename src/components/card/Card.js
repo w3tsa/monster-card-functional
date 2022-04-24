@@ -1,6 +1,9 @@
+// import { Component } from "react";
 import "./Card.css";
 
-function Card({ name, id, email }) {
+function Card({ monster }) {
+  const { name, id, email } = monster;
+
   return (
     <div className="card-container">
       <img
