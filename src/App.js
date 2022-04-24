@@ -28,7 +28,6 @@ function App() {
   }, []);
 
   const filteredMonsters = useMemo(() => {
-    console.log(`calculating filtered monsters for searchField:`, searchField);
     const regexp = new RegExp(searchField, "gi");
     return monsters.filter((monster) => monster.name.match(regexp));
   }, [monsters, searchField]);
